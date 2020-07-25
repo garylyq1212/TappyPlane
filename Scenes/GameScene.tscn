@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/PNG/rock.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PNG/rockDown.png" type="Texture" id=3]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 182, 296 )
+flyingSpeed = 300
+jumpySpeed = -500
+gravity = 200
+
+[node name="rock" type="Sprite" parent="."]
+position = Vector2( 736, 488 )
+texture = ExtResource( 2 )
+
+[node name="rockDown" type="Sprite" parent="."]
+position = Vector2( 736, 104 )
+texture = ExtResource( 3 )

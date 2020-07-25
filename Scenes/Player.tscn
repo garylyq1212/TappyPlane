@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/PNG/Planes/planeBlue3.png" type="Texture" id=1]
+[ext_resource path="res://Assets/PNG/Planes/planeBlue2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PNG/Planes/planeBlue1.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "flying",
+"speed": 20.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 40.6522, -5.9138, 28.4023, -23.8431, 30.6296, -30.6362, 26.6206, -36.2043, -19.9289, -35.4248, -21.875, -30.625, -42.0252, -22.6579, -44.4063, -14.1256, -40.4378, -5.19645, -20.7059, 11.2472, -26.9449, 21.7894, -18.8094, 27.9405, -10.2772, 26.5516, 4.80315, 31.3138, 14.7244, 37.2665, 27.313, 29.5024, 42.6446, 13.298, 44.2338, 2.7034 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "flying"
+frame = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+limit_smoothed = true
+smoothing_enabled = true
